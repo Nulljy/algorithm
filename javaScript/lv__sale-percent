@@ -1,0 +1,6 @@
+function solution(price) {
+    let per = [5, 10, 20];
+    let sale = [100000, 300000, 500000];
+    let check = sale.filter(v => price >= v);
+    return check.length == 0 ? price : price - Math.floor(price * (per[check.length-1] / 100));
+}
