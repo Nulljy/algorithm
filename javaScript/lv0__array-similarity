@@ -1,0 +1,7 @@
+function solution(s1, s2) {
+    let cnt = 0;
+    s1.forEach(c => {
+        if(s2.includes(c)) cnt++;
+    })
+    return cnt;
+}
