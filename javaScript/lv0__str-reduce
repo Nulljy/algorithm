@@ -1,0 +1,18 @@
+// "aAb1B2cC34oOp"안의 한자리 자연수는 1, 2, 3, 4 입니다. 따라서 1 + 2 + 3 + 4 = 10 을 return합니다.
+function solution(str) {
+    let check = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let result = str.split('').reduce((acc, cur) => {
+        return check.includes(cur*1) ? acc + cur*1 : acc;
+    }, 0)
+    return result;
+}
+
+// reduce에서 acc의 초기값을 주고 return을 요청할때에는, 다음 배열로 넘어갈때 전 배열에서의 return이 acc라는것을 잊지 않기.
+// 헤맸던 부분이, 
+
+//let result = str.split('').reduce((acc, cur) => {
+        if(check.includes(cur)) {
+            acc += cur;
+        }
+    }, 0);
+    와 같이 return을 사용하지 않은채로 조건문을 통과하면 acc에 cur을 더하라고 했지만, return 되는 값이 없어서 다음 배열에서의 acc가 undefined가 되는 것이 문제였다.
