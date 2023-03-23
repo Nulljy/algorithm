@@ -1,0 +1,6 @@
+function solution(str) {
+    const regex = /[aeiou]/ig;
+    return str.replace(regex, '');
+}
+
+// [^aeiou]는 aeiou가 아닌것들
