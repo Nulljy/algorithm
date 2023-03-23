@@ -1,0 +1,5 @@
+//"ab6CDE443fgh22iJKlmn1o" str1에 str2가 존재하므로 1을 return합니다.
+function solution(s1, s2) {
+    let regex = new RegExp(s2, 'g');
+    return regex.test(s1) ? 1 : 2;
+}
