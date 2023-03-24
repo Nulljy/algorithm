@@ -24,4 +24,4 @@ function solution(str) {
     })
     return result;
 }
-// 리젝스 틀린 
+// 리젝스 틀린
