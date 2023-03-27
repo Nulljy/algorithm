@@ -10,3 +10,4 @@ function solution(n, t, cnt=0) {
 function solution(n, t) {
   return n << t;
 }
+/
