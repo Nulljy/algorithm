@@ -18,3 +18,11 @@ function solution(arr) {
     result = result + ((arr[0] + arr[1]) - arr[1]);
     return result;
 }
+
+// 다른 방식
+function solution(arr) {
+    // 두개 중 하나가 가장 긴 변일 경우
+    arr.sort((a,b) => a - b);
+    
+    return arr[0] * 2 - 1;
+}
