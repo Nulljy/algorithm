@@ -9,23 +9,22 @@
  */
 
 //Sample 59 ms submission
-
-let s = "car", t = "rat";
-var isAnagram = function(s, t) {
-    // 길이가 다르면 false
-    if(s.length !== t.length) return false;
-    // 알파벳 갯수만큼 int array 생성
-    const alphabet = Array(26).fill(0);
-    for(let i = 0; i<s.length; i++) {
-        alphabet[s.charCodeAt(i) - 97]++;
-        alphabet[t.charCodeAt(i) - 97]--;
-    }
-    for(let i = 0; i<alphabet.length; i++) {
-        if(alphabet[i] !== 0) return false;
-    }
-    return true;
-};
-console.log(isAnagram(s, t));
+// let s = "car", t = "rat";
+// var isAnagram = function(s, t) {
+//     // 길이가 다르면 false
+//     if(s.length !== t.length) return false;
+//     // 알파벳 갯수만큼 int array 생성
+//     const alphabet = Array(26).fill(0);
+//     for(let i = 0; i<s.length; i++) {
+//         alphabet[s.charCodeAt(i) - 97]++;
+//         alphabet[t.charCodeAt(i) - 97]--;
+//     }
+//     for(let i = 0; i<alphabet.length; i++) {
+//         if(alphabet[i] !== 0) return false;
+//     }
+//     return true;
+// };
+// console.log(isAnagram(s, t));
 
 
 
@@ -35,16 +34,35 @@ console.log(isAnagram(s, t));
 // syntax  every(callbackFn)
 
 // let s = "car", t = "rat";
-let s1 = "car", t1 = "rac";
-var isAnagram = function(s1, t1) {
+// let s1 = "car", t1 = "rac";
+// var isAnagram = function(s1, t1) {
+//     if(s.length !== t.length) return false;
+//     let freq = Array(26).fill(0);
+//     for(let i=0; i<s.length; i++) {
+//         const tmpS = s.charCodeAt(i) - 97;
+//         const tmpT = t.charCodeAt(i) - 97;
+//         freq[tmpS]++;
+//         freq[tmpT]--;
+//     }
+//     return freq.every(v => v === 0);
+// };
+// console.log(isAnagram(s1, t1)); // true
+
+// let s = "anagram", t = "nagaram";
+let s = "anagram", t = "nagaram";
+var isAnagram = function(s, t) {
+    // 알파벳 갯수의 배열을 만들고 sort 후 s[i]++ t[i]--
     if(s.length !== t.length) return false;
     let freq = Array(26).fill(0);
+    let tmpS;
+    let tmpT;
+
     for(let i=0; i<s.length; i++) {
-        const tmpS = s.charCodeAt(i) - 97;
-        const tmpT = t.charCodeAt(i) - 97;
+        tmpS = s.charCodeAt(i) - 97;
+        tmpT = t.charCodeAt(i) - 97;
         freq[tmpS]++;
         freq[tmpT]--;
     }
     return freq.every(v => v === 0);
 };
-console.log(isAnagram(s1, t1)); // true
+console.log(isAnagram(s, t));
